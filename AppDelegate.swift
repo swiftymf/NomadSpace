@@ -56,6 +56,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   // MARK: - See viewModels from Yelp
   private func loadBusinesses(with coordinate: CLLocationCoordinate2D) {
+    // crashes because User denied location permission
+    // provide search results based on current map location instead of user location?
     service.request(.search(lat: coordinate.latitude, long: coordinate.longitude)) { [weak self] (result) in
       //private func loadBusinesses() {
       //service.request(.search(lat: 34.046418, long: -118.2426)) { (result) in
